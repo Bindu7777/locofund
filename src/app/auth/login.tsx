@@ -93,8 +93,11 @@ export default function LoginScreen() {
 
       {/* Footer */}
       <View style={styles.footer}>
-        <Pressable onPress={() => router.back()}>
-          <Text style={styles.backLink}>← Return to Selection Screen</Text>
+        <Pressable onPress={() => router.push('/auth/signup')}>
+          <Text style={styles.backLink}>{"Don't have an account?"} <Text style={{ textDecorationLine: 'underline' }}>Sign Up</Text></Text>
+        </Pressable>
+        <Pressable onPress={() => router.back()} style={{ marginTop: 12 }}>
+          <Text style={[styles.backLink, { color: COLORS.text.secondary }]}>← Return to Selection Screen</Text>
         </Pressable>
       </View>
     </Container>
