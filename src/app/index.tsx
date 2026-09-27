@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, StatusBar, SafeAreaView } from 'react-native';
 import { useRouter } from 'expo-router';
-import Svg, { Defs, LinearGradient, RadialGradient, Stop, Rect } from 'react-native-svg';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -15,42 +14,42 @@ import { BrandLogo } from '../components/ui/BrandLogo';
 export default function LandingScreen() {
   const router = useRouter();
 
-  // Little gentle falling snow/dew particles
-  const snow1 = useSharedValue(-20);
-  const snow2 = useSharedValue(-40);
-  const snow3 = useSharedValue(-60);
-  const snow4 = useSharedValue(-30);
-  const snow5 = useSharedValue(-50);
-  const snow6 = useSharedValue(-70);
-  const snow7 = useSharedValue(-25);
-  const snow8 = useSharedValue(-45);
-  const snow9 = useSharedValue(-65);
-  const snow10 = useSharedValue(-35);
+  // Falling Blue Dew Particle Shared Values
+  const dew1Y = useSharedValue(-20);
+  const dew2Y = useSharedValue(-40);
+  const dew3Y = useSharedValue(-60);
+  const dew4Y = useSharedValue(-30);
+  const dew5Y = useSharedValue(-50);
+  const dew6Y = useSharedValue(-70);
+  const dew7Y = useSharedValue(-25);
+  const dew8Y = useSharedValue(-45);
+  const dew9Y = useSharedValue(-65);
+  const dew10Y = useSharedValue(-35);
 
   useEffect(() => {
-    snow1.value = withRepeat(withTiming(760, { duration: 4500, easing: Easing.linear }), -1, false);
-    snow2.value = withRepeat(withTiming(760, { duration: 5800, easing: Easing.linear }), -1, false);
-    snow3.value = withRepeat(withTiming(760, { duration: 3900, easing: Easing.linear }), -1, false);
-    snow4.value = withRepeat(withTiming(760, { duration: 5200, easing: Easing.linear }), -1, false);
-    snow5.value = withRepeat(withTiming(760, { duration: 4800, easing: Easing.linear }), -1, false);
-    snow6.value = withRepeat(withTiming(760, { duration: 6200, easing: Easing.linear }), -1, false);
-    snow7.value = withRepeat(withTiming(760, { duration: 4100, easing: Easing.linear }), -1, false);
-    snow8.value = withRepeat(withTiming(760, { duration: 5500, easing: Easing.linear }), -1, false);
-    snow9.value = withRepeat(withTiming(760, { duration: 4600, easing: Easing.linear }), -1, false);
-    snow10.value = withRepeat(withTiming(760, { duration: 5900, easing: Easing.linear }), -1, false);
-  }, [snow1, snow2, snow3, snow4, snow5, snow6, snow7, snow8, snow9, snow10]);
+    dew1Y.value = withRepeat(withTiming(760, { duration: 4500, easing: Easing.linear }), -1, false);
+    dew2Y.value = withRepeat(withTiming(760, { duration: 5800, easing: Easing.linear }), -1, false);
+    dew3Y.value = withRepeat(withTiming(760, { duration: 3900, easing: Easing.linear }), -1, false);
+    dew4Y.value = withRepeat(withTiming(760, { duration: 5200, easing: Easing.linear }), -1, false);
+    dew5Y.value = withRepeat(withTiming(760, { duration: 4800, easing: Easing.linear }), -1, false);
+    dew6Y.value = withRepeat(withTiming(760, { duration: 6200, easing: Easing.linear }), -1, false);
+    dew7Y.value = withRepeat(withTiming(760, { duration: 4100, easing: Easing.linear }), -1, false);
+    dew8Y.value = withRepeat(withTiming(760, { duration: 5500, easing: Easing.linear }), -1, false);
+    dew9Y.value = withRepeat(withTiming(760, { duration: 4600, easing: Easing.linear }), -1, false);
+    dew10Y.value = withRepeat(withTiming(760, { duration: 5900, easing: Easing.linear }), -1, false);
+  }, [dew1Y, dew2Y, dew3Y, dew4Y, dew5Y, dew6Y, dew7Y, dew8Y, dew9Y, dew10Y]);
 
-  // Snow Particle Styles
-  const snow1Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow1.value }] }));
-  const snow2Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow2.value }] }));
-  const snow3Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow3.value }] }));
-  const snow4Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow4.value }] }));
-  const snow5Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow5.value }] }));
-  const snow6Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow6.value }] }));
-  const snow7Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow7.value }] }));
-  const snow8Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow8.value }] }));
-  const snow9Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow9.value }] }));
-  const snow10Style = useAnimatedStyle(() => ({ transform: [{ translateY: snow10.value }] }));
+  // Blue Dew Particle Styles
+  const dew1Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew1Y.value }] }));
+  const dew2Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew2Y.value }] }));
+  const dew3Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew3Y.value }] }));
+  const dew4Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew4Y.value }] }));
+  const dew5Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew5Y.value }] }));
+  const dew6Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew6Y.value }] }));
+  const dew7Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew7Y.value }] }));
+  const dew8Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew8Y.value }] }));
+  const dew9Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew9Y.value }] }));
+  const dew10Style = useAnimatedStyle(() => ({ transform: [{ translateY: dew10Y.value }] }));
 
   const handleSelectBusiness = () => {
     router.push('/onboarding/business');
@@ -66,85 +65,65 @@ export default function LandingScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="light-content" backgroundColor="#0A183D" />
+      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       
-      {/* Merged Multi-Shade Blue Background */}
-      <View style={StyleSheet.absoluteFill}>
-        <Svg height="100%" width="100%" style={StyleSheet.absoluteFill}>
-          <Defs>
-            <LinearGradient id="mergedBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <Stop offset="0%" stopColor="#0A183D" />
-              <Stop offset="30%" stopColor="#0F52BA" />
-              <Stop offset="65%" stopColor="#2563EB" />
-              <Stop offset="100%" stopColor="#0284C7" />
-            </LinearGradient>
-            <RadialGradient id="cyanMergeGlow" cx="50%" cy="40%" rx="75%" ry="75%">
-              <Stop offset="0%" stopColor="#38BDF8" stopOpacity="0.32" />
-              <Stop offset="50%" stopColor="#1D4ED8" stopOpacity="0.15" />
-              <Stop offset="100%" stopColor="#0A183D" stopOpacity="0" />
-            </RadialGradient>
-          </Defs>
-          <Rect x="0" y="0" width="100%" height="100%" fill="url(#mergedBlueGrad)" />
-          <Rect x="0" y="0" width="100%" height="100%" fill="url(#cyanMergeGlow)" />
-        </Svg>
-      </View>
-
-      {/* Falling Dew Particles from Absolute Top Edge */}
+      {/* Falling Blue Dew Particles from Absolute Top Edge */}
       <View style={StyleSheet.absoluteFill} pointerEvents="none">
-        <Animated.View style={[styles.snowDot, { left: '6%', width: 4, height: 4, opacity: 0.8 }, snow1Style]} />
-        <Animated.View style={[styles.snowDot, { left: '16%', width: 3, height: 3, opacity: 0.5 }, snow2Style]} />
-        <Animated.View style={[styles.snowDot, { left: '26%', width: 5, height: 5, opacity: 0.85 }, snow3Style]} />
-        <Animated.View style={[styles.snowDot, { left: '36%', width: 3, height: 3, opacity: 0.6 }, snow4Style]} />
-        <Animated.View style={[styles.snowDot, { left: '46%', width: 4, height: 4, opacity: 0.75 }, snow5Style]} />
-        <Animated.View style={[styles.snowDot, { left: '56%', width: 3, height: 3, opacity: 0.5 }, snow6Style]} />
-        <Animated.View style={[styles.snowDot, { left: '66%', width: 5, height: 5, opacity: 0.85 }, snow7Style]} />
-        <Animated.View style={[styles.snowDot, { left: '76%', width: 3, height: 3, opacity: 0.6 }, snow8Style]} />
-        <Animated.View style={[styles.snowDot, { left: '86%', width: 4, height: 4, opacity: 0.75 }, snow9Style]} />
-        <Animated.View style={[styles.snowDot, { left: '94%', width: 3, height: 3, opacity: 0.55 }, snow10Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '6%', width: 5, height: 5, opacity: 0.7 }, dew1Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '16%', width: 4, height: 4, opacity: 0.5 }, dew2Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '26%', width: 6, height: 6, opacity: 0.8 }, dew3Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '36%', width: 4, height: 4, opacity: 0.6 }, dew4Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '46%', width: 5, height: 5, opacity: 0.75 }, dew5Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '56%', width: 4, height: 4, opacity: 0.5 }, dew6Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '66%', width: 6, height: 6, opacity: 0.8 }, dew7Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '76%', width: 4, height: 4, opacity: 0.6 }, dew8Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '86%', width: 5, height: 5, opacity: 0.75 }, dew9Style]} />
+        <Animated.View style={[styles.blueDewDot, { left: '94%', width: 4, height: 4, opacity: 0.55 }, dew10Style]} />
       </View>
 
       <View style={styles.container}>
+        
         {/* Center Section: Clean Static Logo Badge in Vertical Middle */}
         <View style={styles.centerSection}>
           <View style={styles.logoCard}>
-            <BrandLogo size="lg" variant="light" layout="name-first" showSubtitle={false} />
+            <BrandLogo size="lg" variant="dark" layout="name-first" showSubtitle={false} />
           </View>
         </View>
 
-        {/* Bottom Section: Login Action Buttons */}
+        {/* Bottom Section: Sign Up Action Buttons in Blue Color */}
         <Animated.View 
           entering={FadeInUp.delay(100).duration(700).springify()}
           style={styles.bottomSection}
         >
           <View style={styles.buttonsGroup}>
-            {/* Login as Business Owner */}
+            {/* Sign Up as Business Owner */}
             <Pressable
               onPress={handleSelectBusiness}
               style={({ pressed }) => [
-                styles.btnPrimary,
-                pressed && styles.btnPressed,
+                styles.btnPrimaryBlue,
+                pressed && styles.btnPrimaryPressed,
               ]}
             >
-              <Text style={styles.btnPrimaryText}>Login as Business Owner</Text>
+              <Text style={styles.btnPrimaryText}>Sign Up as Business Owner</Text>
             </Pressable>
 
-            {/* Login as Investor */}
+            {/* Sign Up as Investor */}
             <Pressable
               onPress={handleSelectInvestor}
               style={({ pressed }) => [
-                styles.btnSecondary,
+                styles.btnSecondaryBlue,
                 pressed && styles.btnSecondaryPressed,
               ]}
             >
-              <Text style={styles.btnSecondaryText}>Login as Investor</Text>
+              <Text style={styles.btnSecondaryText}>Sign Up as Investor</Text>
             </Pressable>
           </View>
 
-          {/* Minimal Sign In Footer */}
+          {/* Sign In Link Footer */}
           <View style={styles.footerRow}>
             <Pressable onPress={handleDirectLogin} hitSlop={12}>
               <Text style={styles.footerText}>
-                Already have an account? <Text style={styles.footerLink}>Sign In</Text>
+                Already have an account? <Text style={styles.footerLink}>Log In</Text>
               </Text>
             </Pressable>
           </View>
@@ -158,27 +137,27 @@ export default function LandingScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#0A183D',
+    backgroundColor: '#FFFFFF',
   },
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'space-between',
     paddingHorizontal: 26,
     paddingTop: 36,
     paddingBottom: 68, // Lifted buttons up
     overflow: 'hidden',
   },
-
-  /* Delicate Small Snow / Dew Particle Dots */
-  snowDot: {
+  
+  /* Falling Blue Dew Particle Dots */
+  blueDewDot: {
     position: 'absolute',
     top: 0,
     borderRadius: 999,
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
-    shadowColor: '#FFFFFF',
+    backgroundColor: 'rgba(15, 82, 186, 0.45)', // Vibrant blue dew drop tint
+    shadowColor: '#0F52BA',
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.3,
     shadowRadius: 2,
     elevation: 2,
   },
@@ -193,14 +172,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 36,
     paddingVertical: 26,
     borderRadius: 28,
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    backgroundColor: '#F8FAFC',
     borderWidth: 1.5,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
-    shadowColor: '#000000',
+    borderColor: '#E2E8F0',
+    shadowColor: '#0F172A',
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.12,
+    shadowOpacity: 0.08,
     shadowRadius: 16,
-    elevation: 5,
+    elevation: 4,
     alignItems: 'center',
   },
 
@@ -215,51 +194,50 @@ const styles = StyleSheet.create({
     gap: 14,
   },
 
-  /* Primary Button - White Pill */
-  btnPrimary: {
+  /* Primary Button - Vibrant Royal Blue */
+  btnPrimaryBlue: {
     width: '100%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#0F52BA',
     paddingVertical: 18,
     borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000000',
+    shadowColor: '#0F52BA',
     shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.12,
+    shadowOpacity: 0.25,
     shadowRadius: 14,
     elevation: 4,
   },
-  btnPressed: {
+  btnPrimaryPressed: {
     opacity: 0.92,
     transform: [{ scale: 0.985 }],
   },
   btnPrimaryText: {
     fontSize: 17,
     fontWeight: '700',
-    color: '#1E6091',
+    color: '#FFFFFF',
     letterSpacing: -0.3,
   },
 
-  /* Secondary Button - Glassmorphism */
-  btnSecondary: {
+  /* Secondary Button - Soft Blue Bordered */
+  btnSecondaryBlue: {
     width: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.18)',
-    borderWidth: 1.5,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
+    backgroundColor: '#EFF6FF',
+    borderWidth: 2,
+    borderColor: '#0F52BA',
     paddingVertical: 18,
     borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
   },
   btnSecondaryPressed: {
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    borderColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: '#DBEAFE',
     transform: [{ scale: 0.985 }],
   },
   btnSecondaryText: {
     fontSize: 17,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#0F52BA',
     letterSpacing: -0.3,
   },
 
@@ -270,15 +248,16 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: '#E0F2FE',
+    color: '#475569',
     fontWeight: '500',
   },
   footerLink: {
-    color: '#FFFFFF',
+    color: '#0F52BA',
     fontWeight: '700',
     textDecorationLine: 'underline',
   },
 });
+
 
 
 
